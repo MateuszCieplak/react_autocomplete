@@ -18,6 +18,7 @@ export const App: React.FC = () => {
           people={peopleFromServer}
           selectedPerson={selectedPerson}
           onSelected={person => setSelectedPerson(person)}
+          debounceDelay={300}
         />
       </main>
     </div>
