@@ -44,9 +44,13 @@ export const Autocomplete: React.FC<Props> = ({
     debounceTimeoutRef.current = setTimeout(() => {
       const trimmed = inputValue.trim();
 
-      if (trimmed === '' || trimmed === lastSearchedValueRef.current) {
+      if (trimmed === '') {
         setFilteredSuggestions(people);
 
+        return;
+      }
+
+      if (trimmed === lastSearchedValueRef.current) {
         return;
       }
 
